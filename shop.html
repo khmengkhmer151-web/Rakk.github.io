@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakk ShopCambodie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Rakk Store</div>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#contact">Support</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="cart-icon" id="cart-btn">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>New Arrivals</h1>
+            <p>Check out our latest collection.</p>
+        </section>
+
+        <div class="category-filter">
+            <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+            <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
+            <button class="filter-btn" onclick="filterProducts('groceries')">Groceries</button>
+            <button class="filter-btn" onclick="filterProducts('fashion')">Fashion</button>
+        </div>
+
+        <section class="product-grid" id="product-container">
+            <!-- Products will be injected here by JavaScript -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <a href="https://www.facebook.com/share/1CXey4BToE/?mibextid=wwXIfr" target="_blank" class="contact-item">
+                    <span>📘</span> Facebook
+                </a>
+                <a href="https://t.me/@seakvirak" target="_blank" class="contact-item">
+                    <span>✈️</span> Telegram
+                </a>
+                <a href="tel:+1234567890" class="contact-item">
+                    <span>📞</span> +1 234 567 890
+                </a>
+                <a href="mailto:seakvirak764@gmail.com" class="contact-item">
+                    <span>✉️</span> seakvirak764@gmail.com
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal-overlay" class="modal-overlay"></div>
+    <div id="product-modal" class="product-modal">
+        <button id="close-modal" class="close-btn">&times;</button>
+        <div id="modal-content" class="modal-grid">
+            <!-- Data injected by JS -->
+        </div>
+    </div>
+
+    <!-- Background Overlay -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Shopping Cart Sidebar -->
+    <aside id="cart-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        
+        <div class="payment-section">
+            <h3>Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-option active" data-method="visa" onclick="selectPaymentMethod('visa')">
+                    <span>💳</span> Visa
+                </div>
+                <div class="payment-option" data-method="khqr" onclick="selectPaymentMethod('khqr')">
+                    <span>🇰🇭</span> KHQR
+                </div>
+            </div>
+        </div>
+
+        <div id="visa-details" class="visa-details active">
+            <h3>Card Information</h3>
+            <input type="text" id="card-name" placeholder="Cardholder Name">
+            <input type="text" id="card-number" placeholder="Card Number" maxlength="16">
+            <div class="card-row">
+                <input type="text" id="card-expiry" placeholder="MM/YY" maxlength="5">
+                <input type="text" id="card-cvc" placeholder="CVC" maxlength="3">
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Subtotal</span>
+                <span>$<span id="cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn">Continue to Checkout</button>
+        </div>
+    </aside>
+
+    <script src="java.js"></script>
+</body>
+</html>
